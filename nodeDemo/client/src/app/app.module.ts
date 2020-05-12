@@ -15,6 +15,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AppHttpService } from './services/app-http.service';
 import { AuthService } from './services/auth.service';
 
+import { Globals } from './services/globals';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AuthService } from './services/auth.service';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [AppHttpService, AuthService],
+  providers: [AppHttpService, AuthService,Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
