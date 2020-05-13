@@ -45,6 +45,7 @@ private loginstate:boolean;
         this.loginstate=true;
         this.router.navigate(['/register']);
       } else {
+        alert("login failed !");
         console.log('Failed');
       }
     });

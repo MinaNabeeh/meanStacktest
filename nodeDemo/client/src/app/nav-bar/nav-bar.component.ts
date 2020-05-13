@@ -13,5 +13,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onLogout(){
+  this.globals.loginstate=false;
+}
 }
