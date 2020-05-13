@@ -6,6 +6,7 @@
     <button *ngIf="globals.loginstate" mat-button routerLink="/register">Register</button>
     <button *ngIf="!globals.loginstate" mat-button routerLink="/login">Login</button>
     <button *ngIf="globals.loginstate" mat-button routerLink="" (click)="onLogout()">logout</button>
+    <button mat-button routerLink="/appointments">make appointmnent</button>
   </mat-toolbar-row>
 </mat-toolbar> 
  <!-- <P>var value : {{globals.loginstate}}</P>  -->

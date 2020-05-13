@@ -16,6 +16,7 @@ import { AppHttpService } from './services/app-http.service';
 import { AuthService } from './services/auth.service';
 
 import { Globals } from './services/globals';
+import { AppointmentsComponent } from './appointments/appointments.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Globals } from './services/globals';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    NavBarComponent
+    NavBarComponent,
+    AppointmentsComponent
   ],
   imports: [
     BrowserModule,
