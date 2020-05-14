@@ -8,12 +8,13 @@ var bodyParser = require('body-parser');
 
 var config = require('./config');
 var userRoute = require('./routes/user.route');
- 
-
+var appointmentsRoute=require('./routes/appointments.route');
 // connect to mongoDB 
+
 mongoose.connect(config.dbUrl);
+
 mongoose.connection.on('connected', () => {
-    console.log('connected to mongo database');
+    console.log('connected to mongo database !!!');
 });
 
 mongoose.connection.on('error', err => {
@@ -26,7 +27,7 @@ var app = express();
 // add middleware 
 app.use(bodyParser.json());
 app.use('/users', userRoute);
-
+app.use('/appointments',appointmentsRoute);
 // set public resoures folder
 app.use(express.static(__dirname + '/public'));
 
