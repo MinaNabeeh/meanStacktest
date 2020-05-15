@@ -8,43 +8,48 @@ var appointmentsSchema = mongoose.Schema({
         type: String,
     },
     date: {
-        type: Date,
-        unique: true,
+        type: String,
         required:true
     },
     phoneNumber:{
-        type:String
+        type:String,
+        required:true
     },
     hour:{
-        type:String
+        type:String,
+        required:true,
+        unique:true
     }
 });
-
 var Appointments = mongoose.model('Appointments', appointmentsSchema);
 Appointments.addAppo=function(appointment,callback){
     appointment.save((err,result)=>{
         
-        if(err){
+        if(err)
+        {
             return callback('failed to add',null);
         }
-        else{
+        else
+        {
             callback(null,'appo added');
         }
     });
 }
-
-Appointments.getAllDayAppo=function(dayDate,callback){
-    appointment.find({date: dayDate},(err,AppArray)=>{
-        if(err){
-            console.log(err);
-            callback('server error');
-        }
-        else if (AppArray==undefined)
-        {
-            callback('user not found');
-        }
-      
-    });
+Appointments.getAllDayAppo=function(dayDate,callback)
+{
+    console.log("entering after post nawww");
+    // appdatesRet=appointment.find({date: dayDate},(err,AppArray)=>{
+        appdatesRet=Appointments.find({date: dayDate}).exec(function(err,docs){
+            console.log("entering after fimd nawww"+dayDate);
+            if(err)
+            {
+                return callback (err,null);
+            }
+            else
+            {
+            callback(null,docs);
+           // console.log("after call: "+docs[1].date.getDate());
+            }
+        });
 }
-
 module.exports = Appointments;

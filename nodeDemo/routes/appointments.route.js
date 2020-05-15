@@ -1,10 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
 var Appo = require('../models/appointments.model');
-
 router.post('/addappointment',(req,res)=>{
-    console.log("entering post nawwaw");
 let appointment=new Appo({
     name:req.body.name,
     email:req.body.email,
@@ -13,21 +10,19 @@ let appointment=new Appo({
     hour:req.body.hour
 });
 Appo.addAppo(appointment,(err,result)=>{
-    console.log("entering afterpost nawww !!");
     if(err){
         return res.json({success:false,message:err})
     }
     return res.json({success:true,message:result});
+    });
 });
-});
-
-router.post('getalldayAppo',(date,res)=>{
-    Appo.getAllDayAppo(date,(err,result)=>{
+router.get('/getalldayAppo',(date,res)=>{
+    console.log("entering post nawww !!");
+    Appo.getAllDayAppo(date.body.date,(err,result)=>{
         if(err){
             return res.json({success: false, message: err});
         }
-        return res.json({success: true, message: result});
+        return res.status(200).json({success: true, data: result});
     });
 });
-
 module.exports = router;
