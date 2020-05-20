@@ -3,7 +3,7 @@ import { LoginModel } from '../models/login.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import {Globals} from '../services/globals'
+import {Globals} from '../services/globals';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

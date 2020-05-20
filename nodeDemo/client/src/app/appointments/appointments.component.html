@@ -1,1 +1,18 @@
-<p>appointments works!</p>
+<p>Hello, please Book an appointment !!</p>
+<mat-form-field class="example-full-width">
+  <input matInput #input="ngModel" [(ngModel)]="date" [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+
+  <mat-error *ngIf="input.hasError('matDatepickerMax')">Date should be valid</mat-error>
+  
+</mat-form-field>
+
+<br><br><br>
+ {{ input.errors | json }}
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
+

@@ -1,4 +1,6 @@
+
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {
     MatToolbarModule,
@@ -14,19 +16,20 @@ import {
 import {
     MatIconModule,
 } from '@angular/material/icon';
-
 @NgModule({
     imports: [
         MatToolbarModule,
         MatButtonModule,
         MatInputModule,
-        MatIconModule
+        MatIconModule,
+        FormsModule
     ],
     exports: [
         MatToolbarModule,
         MatButtonModule,
         MatInputModule,
-        MatIconModule
+        MatIconModule,
+        FormsModule
     ]
 })
 export class MaterialModule { }

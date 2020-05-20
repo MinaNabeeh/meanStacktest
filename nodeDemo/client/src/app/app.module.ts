@@ -16,6 +16,8 @@ import { AppHttpService } from './services/app-http.service';
 import { AuthService } from './services/auth.service';
 
 import { Globals } from './services/globals';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 import { AppointmentsComponent } from './appointments/appointments.component';
 
 @NgModule({
@@ -32,10 +34,12 @@ import { AppointmentsComponent } from './appointments/appointments.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    MatDatepickerModule,
+    MatNativeDateModule ,
+    ReactiveFormsModule
   ],
-  providers: [AppHttpService, AuthService,Globals],
+  providers: [AppHttpService, AuthService,Globals,MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
