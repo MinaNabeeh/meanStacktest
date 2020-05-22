@@ -29,15 +29,21 @@
               <mat-icon matSuffix (click)="hide = !hide">
                 {{hide ? 'visibility' : 'visibility_off'}}
               </mat-icon> -->
-              <input id="appointmentID" matInput #input="ngModel" [(ngModel)]="date" [ngModelOptions]="{standalone: true}" [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
+              <input id="appointmentID" matInput #input="ngModel" [(ngModel)]="this.inputAppo.date" [ngModelOptions]="{standalone: true}" [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             
               <mat-error *ngIf="input.hasError('matDatepickerMax')">Date should be valid</mat-error>
+              <br><br>
           </mat-form-field>
-
+          <br><br><br><br>
+          <label for="exampleInput">Pick a time </label>
+          <!-- <input type="time" id="exampleInput" name="input" ng-model="this.inputAppo.hour" -->
+        <input placeholder="insert hour" aria-label="Editable dial"
+                [ngxTimepicker]="editableDial" [(ngModel)]="this.hour" [ngModelOptions]="{standalone: true}" readonly>
+            <ngx-material-timepicker #editableDial [enableKeyboardInput]="true" ></ngx-material-timepicker>
           <button mat-button type="submit" 
-          class="mat-raised-button mat-primary">make new appointment</button>
+          class="mat-raised-button mat-primary">reserve new appointment</button>
           <!-- <button mat-button routerLink="/register" class="divider">Register</button> -->
       </div>
     </form>

@@ -1,8 +1,8 @@
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
   /***/
@@ -33,6 +33,98 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     module.exports = webpackEmptyAsyncContext;
     webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
     /***/
+  },
+
+  /***/
+  "./src/app/apicall.service.ts":
+  /*!************************************!*\
+    !*** ./src/app/apicall.service.ts ***!
+    \************************************/
+
+  /*! exports provided: ApicallService */
+
+  /***/
+  function srcAppApicallServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ApicallService", function () {
+      return ApicallService;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! rxjs */
+    "./node_modules/rxjs/_esm2015/index.js");
+    /* harmony import */
+
+
+    var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! rxjs/operators */
+    "./node_modules/rxjs/_esm2015/operators/index.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+    var ApicallService = /*#__PURE__*/function () {
+      function ApicallService(httpClient) {
+        _classCallCheck(this, ApicallService);
+
+        this.httpClient = httpClient;
+      }
+
+      _createClass(ApicallService, [{
+        key: "addAppo",
+        value: function addAppo(appo) {
+          return this.httpClient.post("/appointments/addappointment", appo).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) {
+            return data;
+          }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (error) {
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["throwError"])('Something went wrong!');
+          }));
+        }
+      }]);
+
+      return ApicallService;
+    }();
+
+    ApicallService.ɵfac = function ApicallService_Factory(t) {
+      return new (t || ApicallService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]));
+    };
+
+    ApicallService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: ApicallService,
+      factory: ApicallService.ɵfac,
+      providedIn: 'root'
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ApicallService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+          providedIn: 'root'
+        }]
+      }], function () {
+        return [{
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+        }];
+      }, null);
+    })();
+    /***/
+
   },
 
   /***/
@@ -347,6 +439,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _appointments_appointments_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
     /*! ./appointments/appointments.component */
     "./src/app/appointments/appointments.component.ts");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var ngx_material_timepicker__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
+    /*! ngx-material-timepicker */
+    "./node_modules/ngx-material-timepicker/__ivy_ngcc__/fesm2015/ngx-material-timepicker.js");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -361,13 +465,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return new (t || AppModule)();
       },
       providers: [_services_app_http_service__WEBPACK_IMPORTED_MODULE_12__["AppHttpService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_13__["AuthService"], _services_globals__WEBPACK_IMPORTED_MODULE_14__["Globals"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_15__["MatDatepickerModule"]],
-      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _material_module__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"], _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_15__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_16__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]]]
+      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _material_module__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"], _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_15__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_16__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], ngx_material_timepicker__WEBPACK_IMPORTED_MODULE_19__["NgxMaterialTimepickerModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"], _register_register_component__WEBPACK_IMPORTED_MODULE_9__["RegisterComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_11__["NavBarComponent"], _appointments_appointments_component__WEBPACK_IMPORTED_MODULE_17__["AppointmentsComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _material_module__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"], _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_15__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_16__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]]
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _material_module__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"], _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_15__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_16__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], ngx_material_timepicker__WEBPACK_IMPORTED_MODULE_19__["NgxMaterialTimepickerModule"]]
       });
     })();
     /*@__PURE__*/
@@ -378,7 +482,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"], _register_register_component__WEBPACK_IMPORTED_MODULE_9__["RegisterComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_10__["HomeComponent"], _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_11__["NavBarComponent"], _appointments_appointments_component__WEBPACK_IMPORTED_MODULE_17__["AppointmentsComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _material_module__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"], _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_15__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_16__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]],
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _material_module__WEBPACK_IMPORTED_MODULE_6__["MaterialModule"], _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_15__["MatDatepickerModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_16__["MatNativeDateModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], ngx_material_timepicker__WEBPACK_IMPORTED_MODULE_19__["NgxMaterialTimepickerModule"]],
           providers: [_services_app_http_service__WEBPACK_IMPORTED_MODULE_12__["AppHttpService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_13__["AuthService"], _services_globals__WEBPACK_IMPORTED_MODULE_14__["Globals"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_15__["MatDatepickerModule"]],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         }]
@@ -428,31 +532,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _apicall_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../apicall.service */
+    "./src/app/apicall.service.ts");
+    /* harmony import */
+
+
+    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/material/form-field */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
     /* harmony import */
 
 
-    var _angular_material_input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_material_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/material/input */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
     /* harmony import */
 
 
-    var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/material/datepicker */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/datepicker.js");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var ngx_material_timepicker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! ngx-material-timepicker */
+    "./node_modules/ngx-material-timepicker/__ivy_ngcc__/fesm2015/ngx-material-timepicker.js");
+    /* harmony import */
+
+
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
 
@@ -473,12 +595,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     };
 
     var AppointmentsComponent = /*#__PURE__*/function () {
-      function AppointmentsComponent(formBuilder) {
+      function AppointmentsComponent(formBuilder, http, apiService) {
         _classCallCheck(this, AppointmentsComponent);
 
         this.formBuilder = formBuilder;
-        this.inputAppo = new _models_appointment_model__WEBPACK_IMPORTED_MODULE_1__["AppoModel"]();
-        this.date = new Date();
+        this.http = http;
+        this.apiService = apiService;
+        this.inputAppo = new _models_appointment_model__WEBPACK_IMPORTED_MODULE_1__["AppoModel"](); //date=new Date;
+
         this.minDate = new Date();
         this.maxDate = new Date(2021, 0, 1);
       }
@@ -486,14 +610,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(AppointmentsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.AppoForm = this.formBuilder.group({
-            'date': [this.date, []]
+          //workingGood:
+          this.AppoForm = this.formBuilder.group({//   'date': [this.inputAppo.date, [
+            //   ]],
+            //   // 'hour': [this.inputAppo.hour, [
+            //   // ]]
           });
         }
       }, {
         key: "onAppoFormSubmit",
         value: function onAppoFormSubmit() {
-          alert("day: " + this.date.getDate() + "month: " + this.date.getMonth() + "year: " + this.date.getFullYear());
+          //alert("day: "+this.inputAppo.date.getDate()+"month: "+this.inputAppo.date.getMonth()+"year: "+this.inputAppo.date.getFullYear());
+          alert("date: " + this.inputAppo.date + "H :  " + this.inputAppo.date + "TT : " + this.inputAppo.date);
+          alert("out:" + this.hour); //this.inputAppo.date=this.date;
+
+          this.inputAppo.date.setHours(12, 0, 0);
+          this.inputAppo.name = "testName";
+          this.inputAppo.email = "m@g.com";
+          this.inputAppo.phoneNumber = "01220490123"; //this.inputAppo.hour="4:19PM";
+
+          this.apiService.addAppo(this.inputAppo).subscribe(function (res) {});
         }
       }]);
 
@@ -501,15 +637,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     AppointmentsComponent.ɵfac = function AppointmentsComponent_Factory(t) {
-      return new (t || AppointmentsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]));
+      return new (t || AppointmentsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_apicall_service__WEBPACK_IMPORTED_MODULE_4__["ApicallService"]));
     };
 
     AppointmentsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: AppointmentsComponent,
       selectors: [["app-appointments"]],
-      decls: 17,
-      vars: 9,
-      consts: [[1, "medium-list"], [1, "list-viewer-wrapper"], [1, "list-header-title"], ["novalidate", "", 3, "formGroup", "ngSubmit"], [1, "form-container"], ["id", "appointmentID", "matInput", "", "placeholder", "Choose a date", 3, "ngModel", "ngModelOptions", "min", "max", "matDatepicker", "ngModelChange"], ["input", "ngModel"], ["matSuffix", "", 3, "for"], ["picker", ""], [4, "ngIf"], ["mat-button", "", "type", "submit", 1, "mat-raised-button", "mat-primary"]],
+      decls: 28,
+      vars: 14,
+      consts: [[1, "medium-list"], [1, "list-viewer-wrapper"], [1, "list-header-title"], ["novalidate", "", 3, "formGroup", "ngSubmit"], [1, "form-container"], ["id", "appointmentID", "matInput", "", "placeholder", "Choose a date", 3, "ngModel", "ngModelOptions", "min", "max", "matDatepicker", "ngModelChange"], ["input", "ngModel"], ["matSuffix", "", 3, "for"], ["picker", ""], [4, "ngIf"], ["for", "exampleInput"], ["placeholder", "insert hour", "aria-label", "Editable dial", "readonly", "", 3, "ngxTimepicker", "ngModel", "ngModelOptions", "ngModelChange"], [3, "enableKeyboardInput"], ["editableDial", ""], ["mat-button", "", "type", "submit", 1, "mat-raised-button", "mat-primary"]],
       template: function AppointmentsComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
@@ -541,7 +677,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "input", 5, 6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function AppointmentsComponent_Template_input_ngModelChange_9_listener($event) {
-            return ctx.date = $event;
+            return ctx.inputAppo.date = $event;
           });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -552,11 +688,39 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, AppointmentsComponent_mat_error_14_Template, 2, 0, "mat-error", 9);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "br");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "button", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "br");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "make new appointment");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "br");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "label", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Pick a time ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "input", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function AppointmentsComponent_Template_input_ngModelChange_23_listener($event) {
+            return ctx.hour = $event;
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](24, "ngx-material-timepicker", 12, 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "button", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "reserve new appointment");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -574,13 +738,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           var _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](13);
 
+          var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](25);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.AppoForm);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.date)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](8, _c0))("min", ctx.minDate)("max", ctx.maxDate)("matDatepicker", _r1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngModel", ctx.inputAppo.date)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](12, _c0))("min", ctx.minDate)("max", ctx.maxDate)("matDatepicker", _r1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -589,9 +755,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _r0.hasError("matDatepickerMax"));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngxTimepicker", _r3)("ngModel", ctx.hour)("ngModelOptions", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](13, _c0));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("enableKeyboardInput", true);
         }
       },
-      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_3__["MatFormField"], _angular_material_input__WEBPACK_IMPORTED_MODULE_4__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_5__["MatDatepickerInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_5__["MatDatepickerToggle"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_3__["MatSuffix"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_5__["MatDatepicker"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_3__["MatError"]],
+      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormField"], _angular_material_input__WEBPACK_IMPORTED_MODULE_6__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_7__["MatDatepickerInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_7__["MatDatepickerToggle"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatSuffix"], _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_7__["MatDatepicker"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], ngx_material_timepicker__WEBPACK_IMPORTED_MODULE_9__["TimepickerDirective"], ngx_material_timepicker__WEBPACK_IMPORTED_MODULE_9__["NgxMaterialTimepickerComponent"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatError"]],
       styles: ["mat-form-field[_ngcontent-%COMP%] {\n  margin-right: 12px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwb2ludG1lbnRzL0U6XFxBbmd1bGFyTGVzc29uc1xcbWVhblN0YWNrdGVzdFxcbm9kZURlbW9cXGNsaWVudC9zcmNcXGFwcFxcYXBwb2ludG1lbnRzXFxhcHBvaW50bWVudHMuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcG9pbnRtZW50cy9hcHBvaW50bWVudHMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvYXBwb2ludG1lbnRzL2FwcG9pbnRtZW50cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIm1hdC1mb3JtLWZpZWxkIHtcclxuICAgIG1hcmdpbi1yaWdodDogMTJweDtcclxuICB9IiwibWF0LWZvcm0tZmllbGQge1xuICBtYXJnaW4tcmlnaHQ6IDEycHg7XG59Il19 */"]
     });
     /*@__PURE__*/
@@ -607,6 +781,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }], function () {
         return [{
           type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
+        }, {
+          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+        }, {
+          type: _apicall_service__WEBPACK_IMPORTED_MODULE_4__["ApicallService"]
         }];
       }, null);
     })();
@@ -1859,33 +2037,43 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    var hammerjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! hammerjs */
+    "./node_modules/hammerjs/hammer.js");
+    /* harmony import */
+
+
+    var hammerjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_0__);
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ./environments/environment */
     "./src/environments/environment.ts");
     /* harmony import */
 
 
-    var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./app/app.module */
     "./src/app/app.module.ts");
     /* harmony import */
 
 
-    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/platform-browser */
     "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
 
-    if (_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].production) {
-      Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
+    if (_environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].production) {
+      Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
     }
 
-    _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["platformBrowser"]().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])["catch"](function (err) {
+    _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["platformBrowser"]().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])["catch"](function (err) {
       return console.log(err);
     });
     /***/

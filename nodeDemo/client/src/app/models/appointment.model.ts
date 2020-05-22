@@ -1,4 +1,7 @@
 export class AppoModel {
-    date:String;
+    date:Date;
     name: String;
+    email:String;
+    hour:String;
+    phoneNumber:String
 }
