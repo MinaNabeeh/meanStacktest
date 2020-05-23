@@ -336,13 +336,14 @@ class AppointmentsComponent {
     }
     onAppoFormSubmit() {
         //alert("day: "+this.inputAppo.date.getDate()+"month: "+this.inputAppo.date.getMonth()+"year: "+this.inputAppo.date.getFullYear());
-        alert("date: " + this.inputAppo.date + "H :  " + this.inputAppo.date + "TT : " + (this.inputAppo.date));
-        alert("out:" + this.hour);
+        // alert("date: "+this.inputAppo.date+"H :  "+this.inputAppo.date+"TT : "+(this.inputAppo.date));
+        // alert("out:"+typeof(this.hour)); out:String
         //this.inputAppo.date=this.date;
         (this.inputAppo.date).setHours(12, 0, 0);
         this.inputAppo.name = "testName";
         this.inputAppo.email = "m@g.com";
         this.inputAppo.phoneNumber = "01220490123";
+        this.inputAppo.hour = this.hour;
         //this.inputAppo.hour="4:19PM";
         this.apiService.addAppo(this.inputAppo).subscribe((res) => {
         });
