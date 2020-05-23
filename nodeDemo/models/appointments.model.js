@@ -23,6 +23,7 @@ var appointmentsSchema = mongoose.Schema({
 appointmentsSchema.index({ date: 1, hour: 1}, { unique: true });
 var Appointments = mongoose.model('Appointments', appointmentsSchema);
 Appointments.addAppo=function(appointment,callback){
+    
     appointment.save((err,result)=>{
         
         if(err)
@@ -33,11 +34,12 @@ Appointments.addAppo=function(appointment,callback){
         {
             callback(null,'appo added');
         }
+        //console.log("entering after post nawww"+err);
     });
 }
 Appointments.getAllDayAppo=function(dayDate,callback)
 {
-    console.log("entering after post nawww");
+    
     // appdatesRet=appointment.find({date: dayDate},(err,AppArray)=>{
         appdatesRet=Appointments.find({date: dayDate},{}).exec(function(err,docs){
             console.log("entering after fimd nawww"+dayDate);

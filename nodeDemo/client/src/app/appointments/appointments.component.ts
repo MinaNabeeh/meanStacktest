@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import{ Input } from '@angular/core'
 import { AppoModel } from '../models/appointment.model';
 import {Globals} from '../services/globals';
@@ -13,12 +13,15 @@ import {ApicallService} from '../apicall.service'
 })
 export class AppointmentsComponent implements OnInit {
      inputAppo:AppoModel=new AppoModel();
-   //date=new Date;
    minDate = new Date();
    maxDate = new Date(2021, 0, 1);
    AppoForm: FormGroup;
-   hourFrom:any;
-   hour:any;
+   //hour:any;
+  //  name=new FormControl();
+  //  email=new FormControl();
+  //  date=new FormControl();
+  //  hour=new FormControl();
+
   constructor(
     private formBuilder: FormBuilder,
     public http: HttpClient, private apiService: ApicallService
@@ -29,28 +32,40 @@ export class AppointmentsComponent implements OnInit {
   ngOnInit(): void {
     //workingGood:
      this.AppoForm = this.formBuilder.group({
-    //   'date': [this.inputAppo.date, [
-    //   ]],
-    //   // 'hour': [this.inputAppo.hour, [
-
-    //   // ]]
+      'name': [this.inputAppo.name, [
+        Validators.required,
+        Validators.pattern('[a-zA-Z]*'),
+      ]],
+      'email': [this.inputAppo.email, [
+        Validators.email,
+      ]],
+      'date': [this.inputAppo.date, [
+        Validators.required,
+      ]],
+      'hour': [this.inputAppo.hour, [
+        Validators.required,
+      ]],
+      'phoneNumber': [this.inputAppo.phoneNumber, [
+        Validators.required,
+        Validators.pattern('[0-9]*'),
+        Validators.minLength(11),
+        Validators.maxLength(11),
+      ]]
      });
   }
-  onAppoFormSubmit() {
-
-    
+  onAppoFormSubmit()
+  {
     //alert("day: "+this.inputAppo.date.getDate()+"month: "+this.inputAppo.date.getMonth()+"year: "+this.inputAppo.date.getFullYear());
     // alert("date: "+this.inputAppo.date+"H :  "+this.inputAppo.date+"TT : "+(this.inputAppo.date));
-   // alert("out:"+typeof(this.hour)); out:String
-    //this.inputAppo.date=this.date;
+   alert(this.inputAppo.name+" "+this.inputAppo.date+" "+this.inputAppo.email+" "+this.inputAppo.phoneNumber+" "+this.inputAppo.hour);// out:String
     (this.inputAppo.date).setHours(12,0,0);
-    this.inputAppo.name="testName";
-    this.inputAppo.email="m@g.com";
-    this.inputAppo.phoneNumber="01220490123"
-    this.inputAppo.hour=this.hour;
-    //this.inputAppo.hour="4:19PM";
+    if(!this.inputAppo.email)
+    {
+    this.inputAppo.email="NA@NA.com";
+    }
+    //this.inputAppo.phoneNumber="01220490123"
+    //this.inputAppo.hour=this.hour;
     this.apiService.addAppo(this.inputAppo).subscribe((res)=>{
     });
   }
-  // inputAppo.Inpdate=this.date;
 }
